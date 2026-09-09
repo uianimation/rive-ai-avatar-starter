@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Connect your Rive character to AI assistant states. Test activity, emotion, speaking levels and gaze with an open-source starter by Mascot Engine." />
+    <meta name="theme-color" content="#0c121b" />
+    <title>Rive AI Avatar Starter · Mascot Engine</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%238eeac1'/%3E%3Ccircle cx='11' cy='15' r='2'/%3E%3Ccircle cx='21' cy='15' r='2'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <header><a class="brand" href="https://mascotengine.com/">◈ <span>MASCOT ENGINE</span></a><a href="https://github.com/uianimation/rive-ai-avatar-starter">View source ↗</a></header>
+      <main>
+        <section class="intro"><p class="eyebrow">OPEN-SOURCE / WEB STARTER</p><h1>Give your assistant<br /><span>a state of mind.</span></h1><p>One character. Clear signals. Explore an avatar control contract, then connect your own Rive file.</p></section>
+        <div class="workspace">
+          <section class="stage-panel" aria-label="Avatar preview">
+            <div class="panel-top"><span id="mode-label">SCHEMATIC PREVIEW</span><span class="pill" id="activity-label">Idle</span></div>
+            <div id="stage">
+              <div id="schematic" aria-hidden="true"><div class="halo"></div><div class="avatar"><div class="eyes"><i></i><i></i></div><div class="mouth"></div></div><div class="shadow"></div></div>
+              <canvas id="rive-canvas" hidden aria-label="Your Rive character"></canvas>
+              <div class="stage-caption" id="preview-caption">CSS schematic · no Rive character included</div>
+            </div>
+            <div class="stage-footer"><span>ACTIVITY → CHARACTER</span><button id="reset" class="quiet">Reset controls ↺</button></div>
+            <p id="status" role="status">Try the controls, or load your own .riv file below.</p>
+          </section>
+          <section class="controls" aria-label="Avatar controls">
+            <div class="section-title"><h2>Control room</h2><span>01 / SIGNALS</span></div>
+            <fieldset><legend>Activity</legend><div id="activities" class="activity-grid"></div></fieldset>
+            <label for="emotion">Emotion <output id="emotion-value">Neutral</output></label><select id="emotion"><option value="0">Neutral</option><option value="1">Happy</option><option value="2">Concerned</option></select>
+            <label for="audioLevel">Audio level <output id="audioLevel-value">0.00</output></label><input id="audioLevel" type="range" min="0" max="1" step="0.01" value="0" />
+            <label for="viseme">Viseme index <output id="viseme-value">0</output></label><input id="viseme" type="range" min="0" max="14" step="1" value="0" />
+            <div class="gaze-grid"><div><label for="lookX">Gaze X <output id="lookX-value">0.00</output></label><input id="lookX" type="range" min="-1" max="1" step="0.01" value="0" /></div><div><label for="lookY">Gaze Y <output id="lookY-value">0.00</output></label><input id="lookY" type="range" min="-1" max="1" step="0.01" value="0" /></div></div>
+            <button id="simulate" class="primary">Play simulated conversation</button><p class="hint">Scripted signals only. No microphone, speech synthesis or AI service.</p>
+          </section>
+        </div>
+        <section class="connect"><div class="section-title"><h2>Connect your Rive character</h2><span>02 / INTEGRATION</span></div><p>Use an export with the six numeric properties documented below. Files are read in your browser and are not uploaded by this app.</p>
+          <form id="load-form"><div class="form-grid"><div><label for="rive-file">Rive export (.riv)</label><input id="rive-file" type="file" accept=".riv" required /></div><div><label for="artboard">Artboard (optional)</label><input id="artboard" placeholder="Default artboard" maxlength="200" /></div><div><label for="machine">State Machine</label><input id="machine" placeholder="Avatar" required maxlength="200" /></div><div><label for="binding">Binding mode</label><select id="binding"><option value="data-binding">Data Binding (default instance)</option><option value="inputs">Legacy numeric inputs</option></select></div></div><div class="actions"><button class="primary" type="submit" id="load">Load character</button><button class="quiet" type="button" id="unload" disabled>Use schematic</button></div></form>
+        </section>
+        <section class="contract"><div><p class="eyebrow">A SMALL, EXPLICIT CONTRACT</p><h2>App logic owns the signals.<br />Your character owns the motion.</h2><p>Map your AI events to these values. The Rive file must implement the matching transitions and bindings.</p><a href="https://github.com/uianimation/rive-ai-avatar-starter/blob/main/docs/character-contract.md">Read the character contract ↗</a></div><pre id="state-json" aria-label="Current control values"></pre></section>
+        <aside class="cta"><div><h2>Make it your character.</h2><p>Mascot Engine builds custom Rive mascots, AI companions and developer-ready handoffs.</p></div><a class="primary" href="https://mascotengine.com/services/">Explore custom work ↗</a></aside>
+      </main><footer><span>Built by Mascot Engine · MIT-licensed starter code</span><a href="https://wa.me/94717000999">Send a project brief ↗</a></footer>
+    </div><script type="module" src="/src/main.js"></script>
+  </body>
+</html>
