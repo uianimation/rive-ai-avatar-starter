@@ -20,6 +20,12 @@
 - [ ] Repeated load/unload and navigation release rendering resources.
 - [ ] Exported production build loads the bundled WASM without a CDN request.
 
+## Initial release browser verification
+
+Verified on the published GitHub Pages demo on 2026-09-09 in Chromium: the labeled schematic renders, speaking enables mouth controls, setting audio level to 0.65 and viseme to 7 appears in the payload, and interruption into listening resets both values to zero. Reset restores idle. Desktop layout and the 390 px mobile viewport were visually inspected; no horizontal page overflow was observed. GitHub CI passed and the Pages deployment completed successfully. The screenshot in `docs/images/playground.png` is captured from that actual interface.
+
+The workflow run currently reports an upstream Node 20 action-deprecation warning; GitHub ran the affected actions on Node 24 and deployment succeeded. This is separate from the project's Node 22/24 test matrix.
+
 ## Asset limitation
 
 No compatible character is bundled. Automated adapters are tested with controlled stubs, not a genuine authored Rive character. End-to-end character motion, all transition blends, viseme mapping and native mobile runtimes remain unverified until a licensed compatible export is supplied. Do not present the schematic as proof of an authored Rive rig.

@@ -7,7 +7,11 @@ Built by [Mascot Engine](https://mascotengine.com/) for developers who need an e
 ![CI](https://github.com/uianimation/rive-ai-avatar-starter/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-a0e8c6)
 
+**[Open the live playground](https://uianimation.github.io/rive-ai-avatar-starter/)** · [Character contract](docs/character-contract.md) · [Integration notes](docs/integration.md)
+
 > **Bring your own `.riv` file.** This repository does not include a Rive character or an AI backend. The default preview is an original CSS schematic, clearly labeled in the interface. Loading a compatible `.riv` export switches the preview to the actual Rive runtime.
+
+![Actual starter interface with its labeled CSS schematic, controls and Rive file loader](docs/images/playground.png)
 
 ## What you can do
 
@@ -120,7 +124,7 @@ The app pauses the Rive runtime and stops scripted events when the document beco
 
 ## Deployment
 
-`npm run build` produces `dist/`. Serve that directory with a static host that serves `.wasm` as `application/wasm`. No server application is required. GitHub Pages deployment is provided as a manual workflow; enable **Settings → Pages → Source: GitHub Actions**, then run **Deploy demo** from Actions. The production demo can be hosted at `https://uianimation.github.io/rive-ai-avatar-starter/` after that workflow succeeds.
+`npm run build` produces `dist/`. Serve that directory with a static host that serves `.wasm` as `application/wasm`. No server application is required. The [live playground](https://uianimation.github.io/rive-ai-avatar-starter/) is deployed on GitHub Pages. For your own copy, enable **Settings → Pages → Source: GitHub Actions**, then run **Deploy demo** from Actions. Deployment is manual; later commits do not update the demo until you run it again.
 
 ## Contributing and asset rights
 
