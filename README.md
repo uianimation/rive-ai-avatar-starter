@@ -7,7 +7,7 @@ Built by [Mascot Engine](https://mascotengine.com/) for developers who need an e
 ![CI](https://github.com/uianimation/rive-ai-avatar-starter/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-a0e8c6)
 
-**[Open the live playground](https://uianimation.github.io/rive-ai-avatar-starter/)** · [Character contract](docs/character-contract.md) · [Integration notes](docs/integration.md)
+**[Open the live playground](https://uianimation.github.io/rive-ai-avatar-starter/)** · [Character contract](docs/character-contract.md) · [Lip sync and voice-mouth guide](docs/lip-sync-and-voice-mouth.md) · [Integration notes](docs/integration.md)
 
 > **Bring your own `.riv` file.** This repository does not include a Rive character or an AI backend. The default preview is an original CSS schematic, clearly labeled in the interface. Loading a compatible `.riv` export switches the preview to the actual Rive runtime.
 
@@ -19,6 +19,7 @@ Built by [Mascot Engine](https://mascotengine.com/) for developers who need an e
 - Adjust emotion, a mouth-shape index, speaking amplitude and two-axis gaze.
 - Load a local `.riv` file without sending its bytes to an app server.
 - Connect numeric Data Binding properties or legacy numeric State Machine inputs.
+- Follow the Rive-first [lip sync and voice-mouth setup guide](docs/lip-sync-and-voice-mouth.md) for timed visemes, amplitude fallback and interruption-safe playback.
 - Validate all six control names before enabling the character.
 - Run a scripted conversation to inspect transitions and interruption behavior.
 - Inspect the complete control payload beside the preview.
@@ -108,9 +109,10 @@ src/
   main.js               # lifecycle, local file loading and demo controls
   style.css             # responsive UI and CSS schematic
 docs/
-  character-contract.md # authoring and handoff specification
-  integration.md        # runtime boundary and platform notes
-  testing.md            # verification scope and manual test checklist
+  character-contract.md       # authoring and handoff specification
+  lip-sync-and-voice-mouth.md  # Rive mouth rig and audio/viseme pipeline
+  integration.md               # runtime boundary and platform notes
+  testing.md                   # verification scope and manual test checklist
 tests/
   contract.test.js
   bindings.test.js
